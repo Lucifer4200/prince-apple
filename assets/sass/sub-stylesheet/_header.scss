@@ -1,0 +1,362 @@
+//*===== header css start ====*//
+header {
+    .header-main {
+        .header-top {
+            position: relative;
+            background: rgba(0,0,0,0.8);
+            .top-inner {
+                @extend %flex;
+                align-items: center;
+                justify-content: space-between;
+                padding: 7.5px 0;
+                .header-logo {
+                    a {
+                        &:hover {
+                            i {
+                                opacity: 1;
+                            }
+                        }
+                      i {
+                          opacity: .8;
+                          font-size: 20px;
+                          color: $white-color;
+                          transition: all 0.3 ease-in-out;
+                      }
+                    }
+                }
+                .main-menu {
+                    width: calc(100% - 12%);
+                    @include breakpoint (max-lg) {
+                        position: absolute;
+                        width: 100%;
+                        height: calc(100vh - 0px);
+                        right : 0;
+                        left: 0;
+                        top: 100%;
+                        padding-left: 30px;
+                        overflow-y: scroll;
+                        opacity: 0;
+                        transform: scaleY(0);
+                        transform-origin: top;
+                        background-color: $primary-color;
+                        z-index: 999;
+                        transition: all 0.3s ease-in-out;
+                        &.active {
+                            opacity: 1;
+                            transform: scaleY(1);
+                        }
+                    }
+                    .crose-menu {
+                        display: none;
+                        @include breakpoint (max-lg) {
+                            padding: 20px 10px 40px;
+                            display: block;
+                        }
+                        i {
+                            font-size: 25px;
+                            cursor: pointer;
+                            color: $white-color;
+                        }
+                    }
+                    ul.menu-list {
+                        margin: 0;
+                        padding: 0;
+                        display: block;
+                        list-style: none;
+                        @include breakpoint (lg) {
+                            display: flex;
+                            align-items: center;
+                            justify-content: space-between;
+                        }
+                        li {
+                            margin: 5px 0;
+                            @include breakpoint (lg) {
+                                margin: 0 5px;
+                            }
+                            &.active {
+                                a {
+                                    color: $white-color;
+                                }
+                            }
+                            &.open {
+                                .sub-menu {
+                                    ul.drop-list {
+                                        
+                                    }
+                                }
+                            }
+                            &:hover {
+                                a {
+                                    color: $white-color;
+                                    i {
+                                        color: $theme-color;
+                                    }
+                                }
+                                .sub-menu {
+                                    opacity: 1;
+                                    transform: translateY(0);
+                                    visibility: visible;
+                                }
+                            }
+                            a {
+                                color: $white-color;
+                                padding: 5px 10px;
+                                font-size: 14px;
+                                display: inline-block;
+                                text-decoration: none;
+                                i {
+                                    height: 20px;
+                                    width: 20px;
+                                    line-height: 20px;
+                                    text-align: center;
+                                    font-size: 12px;
+                                    margin-right: 5px;
+                                    border-radius: 3px;
+                                    background: #e9ecef;
+                                    transition: all 0.3s ease-in-out;
+                                }
+                                @include breakpoint (lg) {
+                                    color: #A1A1A1;
+                                }
+                            }
+                            button {
+                                padding: 5px 10px;
+                                display: none;
+                                background: transparent;
+                                @include breakpoint (lg) {
+                                    display: block;
+                                }
+                                &:hover {
+                                    i {
+                                        opacity: 1;
+                                    }
+                                }
+                                i {
+                                    opacity: .8;
+                                    font-size: 18px;
+                                    color: $white-color;
+                                    transition: all .3s ease-in-out;
+                                }
+                            }
+                        }
+                    }
+                }
+                .header-cart {
+                    transition: all 0.3s ease-in-out;
+                    &.active {
+                        opacity: 0;
+                    }
+                    button {
+                        &:hover {
+                            i {
+                                opacity: 1;
+                            }
+                        }
+                        i {
+                            opacity: .8;
+                            font-size: 18px;
+                            color: $white-color;
+                            transition: all 0.3s ease-in-out;
+                        }
+                    }
+                }
+                .mobile-bar {
+                    display: block;  
+                    height: 30px;
+                    width: 30px;
+                    line-height: 30px;
+                    position: relative;
+                    @include breakpoint (lg) {
+                        display: none;
+                    }
+                    &.active { 
+                        opacity: 1;
+                        span {
+                            &:nth-child(1) {
+                                margin-top: 0;
+                                transform: translate(-50%, -50%) rotate(-45deg);
+                            }
+                            &:nth-child(2) {
+                                transform: translate(-45%, -50%) rotate(45deg);
+                                top: 18px;
+                            }
+                        }
+                    }
+                    span{
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        width: 20px;
+                        height: 1.5px;
+                        z-index: 1;
+                        border-radius: 4px;
+                        background: $white-color;
+                        transform: translate(-50%, -50%);
+                        transition: all .3s ease;
+                        &:nth-child(1) {
+                            margin-top: 3px;
+                        }
+                        &:nth-child(2) {
+                            margin-top: -3px; 
+                        }
+                    }
+                }
+            }  
+        }
+        .header-bottom {
+            padding: 10.5px 0;
+            border-bottom: 1px solid $border-color;
+            .bottom-inner {
+                @extend %flex;
+                align-items: center;
+                justify-content: space-between;
+                .inner-left {
+                    a {
+                        h4 {
+                            margin: 0;
+                        }
+                    }
+                }
+                .inner-right {
+                    p {
+                        margin: 0;
+                        a {
+                            color: #06c;
+                            text-decoration: none;
+                            transition: all 0.3s ease-in-out;
+                            &:hover {
+                                text-decoration: underline;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+//*===== header css ends  ====*//
+
+//*===== sidebar css start ====*//
+.side-bar {
+    padding: 16px 0;
+    display: none;
+    transition: all .3s ease-in-out;
+    background: rgba(255, 255, 255, 0.8);
+    &.menu-fixed {
+        position: fixed !important;
+        top: 0;
+        width: 100%;
+        z-index: 999;
+        display: block;
+        background: #fff;
+        box-shadow: 0px -1px 4px 0px #f1f4f6;
+    }
+    .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        transform: scale(0);
+        transform-origin: right;
+        transition: all 0.3 ease-in-out;
+        background: rgba(0, 0, 0, 0.35);
+        &.active {
+            z-index: 9;
+            transform: scale(1.1)
+        }
+    }
+    .sidebar-item {
+        @extend %flex;
+        justify-content: space-between;
+        align-items: center;
+        .sidebar-menu {
+            padding: 10px;
+            position: fixed;
+            top: 0;
+            right: -250px;
+            width: 250px;
+            height: calc(100vh - 0px);
+            z-index: 111;
+            overflow-x: hidden;
+            background: $white-color;
+            transition: all 0.3s ease-in-out;
+            &.active {
+                right: 0;
+            }
+            ul.menu-list {
+                margin: 0;
+                padding: 0;
+                list-style: none;
+                margin-top: 100px;
+                li {
+                    margin: 5px 10px;
+                }
+            }
+        }
+        .side-hamburger {
+            display: block;  
+            height: 40px;
+            width: 40px;
+            line-height: 40px;
+            position: relative;
+            margin: 0 15px;
+            border-radius: 3px;
+            z-index: 111;
+            background: #F2F2F2;
+            &.active { 
+                opacity: 1;
+                span {
+                    &:nth-child(1) {
+                        transform: translate(-100%, -50%) rotate(45deg);
+                        margin-right: 0px;
+                        display: none;
+                    }
+                    &:nth-child(2) {
+                        margin: 0;
+                        transform: translate(-50%, -50%) rotate(-45deg);
+                    }
+                    &:nth-child(3) {
+                        transform: translate(-50%, -50%) rotate(45deg);
+                        top: 28px;
+                    }
+                }
+            }
+            span{
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                width: 30px;
+                height: 4px;
+                z-index: 1;
+                border-radius: 4px;
+                background: $theme-color;
+                transform: translate(-50%, -50%);
+                transition: all .3s ease;
+                &:nth-child(1) {
+                    // width: 14px;
+                    margin-top: 8px;
+                    // margin-left: 8px;
+                }
+                &:nth-child(3) {
+                    // width: 14px;
+                    margin-top: -9px;
+                    // margin-left: -8px;
+                }
+            }
+        }
+    }
+}
+//*===== sidebar css ends  ====*//
+
+
+@keyframes videobutton {
+    0% {
+      transform: scale(0);
+      opacity: 1; 
+    }
+    100% {
+      transform: scale(1);
+      opacity: 0; 
+    } 
+}

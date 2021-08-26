@@ -1,0 +1,109 @@
+/*========================================================
+        DARK LAYOUT
+=========================================================*/
+/* app ecommerce details css */
+/*---------------*/
+.app-ecommerce-details .item-features {
+  background-color : #F7F7F7;
+}
+
+.app-ecommerce-details .item-features h5 {
+    font-size: 14px;
+}
+
+i.font-large-2 {
+  font-size: 70px;
+}
+
+.seller-btn button {
+  background: deepskyblue;
+}
+
+button.btn-icon {
+  height: 40px;
+  width: 40px;
+  line-height: 40px;
+  padding: 0;
+  font-size: 24px;
+  background: #fff;
+  border: 1px solid;
+}
+
+.text-truncate {
+  font-weight: normal;
+}
+
+/* swiper slide shadow */
+.swiper-container .swiper-shadow {
+  box-shadow : 2px 8px 10px 0 rgba(25, 42, 70, 0.13) !important;
+}
+
+.swiper-responsive-breakpoints.swiper-container .swiper-slide {
+  text-align : center;
+  font-weight : 500;
+  background-color : #F7F7F7;
+  padding : 1.5rem;
+  cursor : pointer;
+}
+.img-container   {
+  height: 80px!important;
+}
+.img-container img {
+  height: auto;
+}
+
+.swiper-button-prev, .swiper-button-next, .swiper-container-rtl .swiper-button-prev, .swiper-container-rtl .swiper-button-next {
+  background-image : none;
+  width : 35px;
+  font-size : 2rem;
+}
+.swiper-button-prev:focus, .swiper-button-next:focus, .swiper-container-rtl .swiper-button-prev:focus, .swiper-container-rtl .swiper-button-next:focus {
+  outline : none;
+}
+
+.swiper-button-prev {
+  left : -5px;
+}
+.swiper-button-prev:after {
+  font-size: 24px;
+}
+
+.swiper-button-next {
+  right : -5px;
+}
+.swiper-button-next:after {
+  font-size: 24px;
+}
+
+.product-color-options .color-option {
+  border : 2px solid transparent;
+  border-radius : 50%;
+  position : relative;
+  cursor : pointer;
+  padding : 0.3rem;
+}
+.product-color-options .color-option .filloption {
+  height : 21px;
+  width : 21px;
+  border-radius : 50%;
+}
+
+.product-color-options .selected .b-primary {
+  border-color : #7367F0;
+}
+
+.product-color-options .selected .b-success {
+  border-color : #28C76F;
+}
+
+.product-color-options .selected .b-danger {
+  border-color : #EA5455;
+}
+
+.product-color-options .selected .b-warning {
+  border-color : #FF9F43;
+}
+
+.product-color-options .selected .b-black {
+  border-color : #22292F;
+}
